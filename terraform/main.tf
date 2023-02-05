@@ -114,6 +114,9 @@ resource "azurerm_storage_account" "iso_store" {
   location                 = var.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  depends_on = [
+    azurerm_resource_group.nested_vm_rg
+  ]
 
   tags = {
     environment = "staging"
