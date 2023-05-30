@@ -86,8 +86,8 @@ resource "azurerm_windows_virtual_machine" "windows_vm_nested" {
     azurerm_network_interface.nested_vm_nic_1
   ]
   size                     = "Standard_D8s_v3"
-  admin_username           = "adminuser"
-  admin_password           = "P@$$w0rd1234!"
+  admin_username           = var.admin_username
+  admin_password           = var.admin_password
   enable_automatic_updates = "true"
   network_interface_ids = [
     azurerm_network_interface.nested_vm_nic_1.id
